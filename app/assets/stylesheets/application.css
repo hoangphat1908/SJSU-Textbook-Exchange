@@ -1,0 +1,176 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ a:hover{
+  color: #FF0800;
+  background-color: white;
+}
+
+main{
+  padding: 10px 20px 20px 20px;
+}
+ header{
+  display: block;
+  padding: 20px 10px 50px 10px;
+}
+ html, body{
+  margin:0;
+  padding:0;
+  height:100%;
+  background: #F2F2F2;
+}
+
+ div#container{
+  box-sizing: border-box;
+  padding: 110px 0px 150px 0px;
+  position: relative;
+  min-height:100%;
+}
+ div#headwrap{
+  position:absolute;
+  top: 0;
+  left: 0;
+  width:100%;
+  height:110px;
+  background: white;
+}
+ div#bodywrap{
+  width: 900px;
+  min-height: 100%;
+  margin: 0 auto ; 
+  /*border: 2px solid #01B1AF;*/
+}
+
+ div#footwrap{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height:175px;
+  background: white;
+}
+
+/*WEBSITE TITLE*/
+ .websiteTitle{
+  position: absolute;
+  left: 23%;
+  top:5px;
+  margin-left: -250px;
+  font-size: 28px;
+  text-decoration: none;
+  display: inline;
+  line-height: 90px;
+  padding-left: 60px;
+  
+}
+.websiteTitle:hover{
+  background-color: white;
+  color: black;
+}
+ /*NAVIGATION BAR*/
+ div#horzNav{
+  position: absolute;
+  right: 2%;
+  top:30px;
+  margin-left: -200px;
+  /*
+  float: right;
+  position: relative;
+  right:50px;
+  */
+  width:400px;
+  display:block;
+  /* Padding Top, Right, Bottom, Left */
+  padding: 10px 20px 10px 10px;
+  background: #01B1AF;
+}
+div#horzNav a{
+
+  text-decoration: none;
+  padding: 0px 0px 0px 20px;
+  font-weight: bold;
+  color: black;
+}
+ 
+div#horzNav a:hover{
+  background-color:#01B1AF;
+  color: white;
+}
+/*SEARCHING BAR*/
+ div#searchBar{
+  position: absolute;
+  right: 2%;
+  top:95px;
+}
+
+#search-input{
+  position: relative;
+  width: 250px;
+  vertical-align: 80%;
+}
+ 
+#search-button{
+position: relative;
+  vertical-align: 80%;
+  background-color: #00647D;
+  padding: 5px 12px;
+  font: 13px sans-serif;
+  text-decoration: none;
+  border: 1px solid #000;
+  border-color: #aaa #444 #444 #aaa;
+  color: #FFF;
+}
+
+/*FOOT OF THE LAYOUT*/
+#leftfoot{
+  position:absolute;
+  right:71%;
+  margin-right:-250px;
+width:500px;
+}
+
+#leftfoot1{
+  font-size: 28px;
+  color: #606060;
+  text-decoration: none;
+  display: inline;
+  line-height: 90px;
+  padding-left: 60px;
+}
+#leftfoot2{
+  position: relative;
+  top:-50px;
+  left:30px;
+  color:#A8A8AA
+}
+#midfoot{
+  position:absolute;
+  left:75%;
+  margin-left:-130px;
+  width: 260px;
+  /*margin-right: 20px;*/
+}
+#midfoot1{
+  color:#A8A8AA;
+}
+
+
+
+
+
+
+
+

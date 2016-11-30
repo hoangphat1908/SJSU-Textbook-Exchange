@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Test1</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+<header class= "navbar navbar-fixed-top navbar-inverse">
+  <div class = "container">
+	<%= link_to "Our App", root_path %>
+	<nav>
+		<ul class="nav navbar-nav navbar-right">
+			<li><%= link_to "Home", root_path %></li>
+			<li><%= link_to "Help", help_path %></li>
+			<li><%= link_to "Posts", posts_path %></li>
+			<% if logged_in? %>
+			 <li><%= link_to "Users", users_path %></li>
+			 <li><%= link_to "Profile", current_user %></li>
+			 <li><%= link_to "Log out", logout_path, method:"delete" %></li>
+			 <li>(Log in as <%= current_user.first %>)</li>
+			 <% else %>
+			  <li><%= link_to "Log in", login_path %></li>
+			 <% end %>
+		</ul>
+	</nav>
+</div>
+</header>
+
+
+
+
+
+
+
+  <body>
+    <%= yield %>
+  </body>
+
+
+
+
+  
+</html>
