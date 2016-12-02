@@ -99,8 +99,8 @@ class UsersController < ApplicationController
     def correct_user
       @user = User.find(params[:id])
       unless @user == current_user
-        flash[:notice] = "Only edit your own account"
-        redirect_to(users_path) 
+        flash[:notice] = "You can only edit your own account"
+        redirect_to({:controller => 'users', :action =>'show'}) 
       end
     end
    

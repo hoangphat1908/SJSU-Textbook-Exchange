@@ -9,7 +9,7 @@
 </p>
 
 <p>
-  <strong><%= link_to @post.user.first, @post.user %> </strong>
+  This ad is posted by <strong><%= link_to @post.user.first, @post.user %> </strong>
 </p>
 
 <p><strong> A list of books on my ad:</strong></p>
@@ -81,10 +81,12 @@
 
 
 
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %> |
+<%= link_to 'Edit this ad', edit_post_path(@post) %> |
+<%= link_to 'Back to ads page', posts_path %>
 <% id = @post.user_id %>
-<%= link_to 'Send Message', new_conversation_path(:id => id) %>
+<% unless @post.user == current_user %>
+	| <%= link_to 'Send Message', new_conversation_path(:id => id) %>
+<% end %>
 <!-- debug -->
 <p>
 </p>

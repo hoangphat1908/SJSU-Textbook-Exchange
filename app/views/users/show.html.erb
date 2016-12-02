@@ -13,12 +13,12 @@
   <%= @user.email %></li>
 </ul>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<%= link_to 'Edit Your Account', edit_user_path(@user) %> |
+<%= link_to 'Back to Home', '/' %>
 
 <% id = @user.id %>
 <% if @user!=current_user %>
-	<%= link_to 'Send Message', new_conversation_path(:id => id) %>
+	| <%= link_to 'Send Message', new_conversation_path(:id => id) %>
 <% end %>
 <div>
 	<% if @user.posts.any? %>
