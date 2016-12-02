@@ -10,11 +10,7 @@
   </head>
 
   <body>
-  <p id="notice"><%= notice %></br>
-     <%= flash[:success] unless flash[:success].blank? %></br>
-     <%= flash[:danger] unless flash[:danger].blank? %></br>
-     <%= flash[:error] unless flash[:error].blank? %></br>
-  </p>
+  
     <div id="container">
       <div id="headwrap">
         <header>
@@ -33,23 +29,28 @@
             <%= link_to 'Home', "/"%>
             <%= link_to "Help", help_path %>
             <%= link_to "Ads", posts_path %>
-            <%= link_to 'About', {:controller => 'static_pages', :action =>'about'}%>
+            <!-- link_to 'About', {:controller => 'static_pages', :action =>'about'} -->
             <% if logged_in? %>
-               <%= link_to "Users", users_path %>
+               
                <%= link_to "Profile", current_user %>
+               <strong>(<%= current_user.first %>)</strong>
                <!--link to mailbox for messaging-->
                <%= link_to "Inbox", mailbox_inbox_path %>
                <%= link_to "Log out", logout_path, method:"delete" %>
-               (Log in as <%= current_user.first %>)
+               <!-- (Log in as <%= current_user.first %>) -->
             <% else %>
                <%= link_to "Log in", login_path %>
             <% end %>
-            <%= link_to 'More', "/"%>
           </div>
         </header>
       </div><!--END OF HEADWRAP-->
 
       <div id="bodywrap">
+        <p id="notice"><%= notice %>
+           <%= flash[:success]  unless flash[:success].blank? %>
+           <%= flash[:danger]  unless flash[:danger].blank? %>
+           <%= flash[:error] unless flash[:error].blank? %>
+        </p>
         <%= yield %>
       </div><!--END OF BODYWRAP-->
 

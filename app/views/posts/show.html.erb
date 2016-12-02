@@ -32,7 +32,7 @@
 	  <tbody>
 	    <% @books.each do |book| %>
 	      <tr>
-	        <td><%= image_tag book.picture.url, size: "150x150" %></td>
+	        <td><%= image_tag book.picture.url, size: "116x150" %></td>
 	        <td><%= book.title %></td>
 	        <td><%= book.edition %></td>
 	        <td><%= book.author %></td>
@@ -82,7 +82,7 @@
 
 
 <%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+<%= link_to 'Back', posts_path %> |
 <% id = @post.user_id %>
 <%= link_to 'Send Message', new_conversation_path(:id => id) %>
 <!-- debug -->

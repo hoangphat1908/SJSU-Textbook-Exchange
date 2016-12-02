@@ -24,8 +24,12 @@ class ConversationsController < ApplicationController
 	end
 
 	def reply
-		current_user.reply_to_conversation(conversation, message_params[:body])
-		flash[:success] = "Your reply was sent"
+		if message_params[:body] != ''
+			current_user.reply_to_conversation(conversation, message_params[:body])
+			flash[:success] = "Your reply was sent"
+		else
+			flash[:success] = "Your body cannot be empty"
+		end
 		redirect_to conversation_path(conversation)
 	end
 
