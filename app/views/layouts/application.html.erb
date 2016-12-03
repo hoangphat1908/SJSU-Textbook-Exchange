@@ -10,7 +10,6 @@
   </head>
 
   <body>
-  
     <div id="container">
       <div id="headwrap">
         <header>
@@ -19,7 +18,7 @@
 
            <div id="searchBar">
            <%= form_tag books_path, :method =>'get' do %>
-              <%=text_field_tag :search, params[:search], id: "search-input", data: {autocomplete: autocomplete_book_title_books_path}%>
+              <%=text_field_tag :search, params[:search], id: "search-input", placeholder: "search book", data: {autocomplete: autocomplete_book_title_books_path}%>
               <%= submit_tag "Search", {:id => 'search-button'} %>
             <%end%>
 
@@ -51,6 +50,7 @@
            <%= flash[:danger]  unless flash[:danger].blank? %>
            <%= flash[:error] unless flash[:error].blank? %>
         </p>
+        <p id="notice"></br></br></p>
         <%= yield %>
       </div><!--END OF BODYWRAP-->
 

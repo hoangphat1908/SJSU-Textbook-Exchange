@@ -1,3 +1,4 @@
+
 <% @post = Post.find(params[:post_id])%>
 <%= form_for ([@post, @book]), :html => {multipart: true, :class => "form-horizontal book" } do |f| %>
 
