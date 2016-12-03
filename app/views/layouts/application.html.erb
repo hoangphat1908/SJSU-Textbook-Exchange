@@ -45,12 +45,12 @@
       </div><!--END OF HEADWRAP-->
 
       <div id="bodywrap">
+        <p id="notice"></br></br></p>
         <p id="notice"><%= notice %>
            <%= flash[:success]  unless flash[:success].blank? %>
            <%= flash[:danger]  unless flash[:danger].blank? %>
            <%= flash[:error] unless flash[:error].blank? %>
         </p>
-        <p id="notice"></br></br></p>
         <%= yield %>
       </div><!--END OF BODYWRAP-->
 
