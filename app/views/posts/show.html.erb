@@ -8,21 +8,31 @@ h5{font-size: 14px;}
 .table{width:100%;max-width:160%;margin-bottom:0px}
 .table-striped>tbody>tr:nth-of-type(odd){background-color:#f9f9f9;}
 </style>
-<p>
-  <strong>Title:</strong>
-  <%= @post.title %>
-</p>
 
-<p>
-  <strong>Body:</strong>
-  <%= @post.body %>
-</p>
 
-<p>
-  This ad is posted by <strong><%= link_to @post.user.first, @post.user %> </strong>
-</p>
+<div id="adHeader">
+	<div id="adTitle">
+		<%= @post.title %>
+	</div>
 
-<p><strong> A list of books on my ad:</strong></p>
+ 
+		<p>Posted <%= time_ago_in_words(@post.created_at) %> ago by <%= link_to @post.user.first, @post.user %></p>
+<div id="adBody">
+	<%= @post.body %>
+</div>
+</div>
+<br>
+<% if @post.user == current_user %>
+	<%= link_to 'Edit this ad', edit_post_path(@post),{:id => 'actions'} %>
+<% end %>
+
+<% id = @post.user_id %>
+<% unless @post.user == current_user %>
+	 <%= link_to 'Send Message', new_conversation_path(:id => id),{:id => 'actions'} %>
+<% end %>
+| <%= link_to 'Back to ads page', posts_path,{:id => 'actions'} %>
+
+
 
 <div id="books_part">
 	<%- model_class = Book -%>
@@ -43,7 +53,9 @@ h5{font-size: 14px;}
 	    <% @books.each do |book| %>
 	      <tr>
 	        <td><%= image_tag book.picture.url, size: "116x150" %></td>
-	        <td><%= book.title %></td>
+	        <td><%= link_to book.title, post_book_path(@post, book) %></td>
+  
+
 	        <td><%= book.edition %></td>
 	        <td><%= book.author %></td>
 	        <td><%= book.subject %></td>
@@ -59,20 +71,19 @@ h5{font-size: 14px;}
 <!-- COMMENT LISTING -->
 
 <h2>Comments</h2>
+<div id="comments">
 <% @post.comments.each do |comment| %>
   <p>
-    <strong>User:</strong>
-    <%= comment.user.first %>
+    <strong><%= link_to comment.user.first, comment.user %>:</strong> <%= comment.body %>
+  
+<% if comment.user == current_user %>
+
+  <%= link_to 'Edit', edit_post_comment_path(@post, comment) %>
+  <%= link_to 'Destroy', [comment.post, comment], method: :delete, data: { confirm: 'Are you sure?' } %>
+  <% end %>
   </p>
- 
-  <p>
-    <strong>Comment:</strong>
-    <%= comment.body %>
-  </p>
-  <td><%= link_to 'Edit', edit_post_comment_path(@post, comment) %></td>
-  <td><%= link_to 'Destroy', [comment.post, comment], method: :delete, data: { confirm: 'Are you sure?' } %></td>
 <% end %>
- 
+
 <!-- END OF COMMENT LISTING -->
 <!-- COMMENT INSERTING -->
 
@@ -86,17 +97,8 @@ h5{font-size: 14px;}
     <%= f.submit %>
   </p>
 <% end %>
-
+ </div>
 <!-- END OF COMMENT INSERTING  -->
-
-
-
-<%= link_to 'Edit this ad', edit_post_path(@post) %> |
-<%= link_to 'Back to ads page', posts_path %>
-<% id = @post.user_id %>
-<% unless @post.user == current_user %>
-	| <%= link_to 'Send Message', new_conversation_path(:id => id) %>
-<% end %>
 <!-- debug -->
 <p>
 </p>

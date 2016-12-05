@@ -18,7 +18,7 @@ h5{font-size: 14px;}
     <tr>
       <th>Title</th>
       <th>Body</th>
-      <th colspan="3"></th>
+      <th>User</th>
     </tr>
   </thead>
 
@@ -31,11 +31,13 @@ h5{font-size: 14px;}
   <tbody>
     <% @posts.each do |post| %>
       <tr>
-        <td><%= post.title %></td>
+        <td><%= link_to post.title, post_path(post) %></td>
         <td><%= post.body %></td>
-        <td><%= link_to 'Show', post %></td>
+        <td>Posted <%= time_ago_in_words(post.created_at) %> ago by <%= link_to post.user.first, post.user %></td>
+        <!--
         <td><%= link_to 'Edit', edit_post_path(post) %></td>
         <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        -->
       </tr>
     <% end %>
   </tbody>
