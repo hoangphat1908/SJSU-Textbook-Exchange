@@ -1,0 +1,443 @@
+/* line 1, /Users/Peter/Documents/github/Cmpe131/app/assets/stylesheets/scaffolds.scss */
+body {
+  background-color: #fff;
+  color: #333;
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+  margin: 33px;
+}
+
+/* line 10, /Users/Peter/Documents/github/Cmpe131/app/assets/stylesheets/scaffolds.scss */
+p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+  margin: 33px;
+}
+
+/* line 17, /Users/Peter/Documents/github/Cmpe131/app/assets/stylesheets/scaffolds.scss */
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+/* line 23, /Users/Peter/Documents/github/Cmpe131/app/assets/stylesheets/scaffolds.scss */
+a {
+  color: #000;
+}
+/* line 26, /Users/Peter/Documents/github/Cmpe131/app/assets/stylesheets/scaffolds.scss */
+a:visited {
+  color: #666;
+}
+/* line 30, /Users/Peter/Documents/github/Cmpe131/app/assets/stylesheets/scaffolds.scss */
+a:hover {
+  color: #fff;
+  background-color: #000;
+}
+
+/* line 36, /Users/Peter/Documents/github/Cmpe131/app/assets/stylesheets/scaffolds.scss */
+th {
+  padding-bottom: 5px;
+}
+
+/* line 40, /Users/Peter/Documents/github/Cmpe131/app/assets/stylesheets/scaffolds.scss */
+td {
+  padding-bottom: 7px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+/* line 47, /Users/Peter/Documents/github/Cmpe131/app/assets/stylesheets/scaffolds.scss */
+div.field, div.actions {
+  margin-bottom: 10px;
+}
+
+/* line 52, /Users/Peter/Documents/github/Cmpe131/app/assets/stylesheets/scaffolds.scss */
+#notice {
+  color: green;
+}
+
+/* line 56, /Users/Peter/Documents/github/Cmpe131/app/assets/stylesheets/scaffolds.scss */
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+/* line 62, /Users/Peter/Documents/github/Cmpe131/app/assets/stylesheets/scaffolds.scss */
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+/* line 70, /Users/Peter/Documents/github/Cmpe131/app/assets/stylesheets/scaffolds.scss */
+#error_explanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  margin-bottom: 0;
+  background-color: #c00;
+  color: #fff;
+}
+/* line 81, /Users/Peter/Documents/github/Cmpe131/app/assets/stylesheets/scaffolds.scss */
+#error_explanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+
+/* line 87, /Users/Peter/Documents/github/Cmpe131/app/assets/stylesheets/scaffolds.scss */
+label {
+  display: block;
+}
+/* line 4, /Users/Peter/Documents/github/Cmpe131/app/assets/stylesheets/static_pages.scss */
+.homepic {
+  position: relative;
+  left: 75px;
+  top: 10px;
+}
+
+/* line 9, /Users/Peter/Documents/github/Cmpe131/app/assets/stylesheets/static_pages.scss */
+.buttons {
+  position: relative;
+  top: -85px;
+  left: 75px;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+
+/* line 16, /Users/Peter/Documents/github/Cmpe131/app/assets/stylesheets/static_pages.scss */
+.buttons button {
+  height: 70px;
+  width: 177px;
+  background-color: #01B1AF;
+  color: white;
+}
+
+/* line 22, /Users/Peter/Documents/github/Cmpe131/app/assets/stylesheets/static_pages.scss */
+.buttons button:hover {
+  background-color: #007B9A;
+}
+
+/* css code does not work here*/
+/* line 26, /Users/Peter/Documents/github/Cmpe131/app/assets/stylesheets/static_pages.scss */
+.circular_image {
+  position: relative;
+  width: 300;
+  height: 150;
+  background-size: cover;
+  display: block;
+  border-radius: 50px;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+}
+
+/* line 37, /Users/Peter/Documents/github/Cmpe131/app/assets/stylesheets/static_pages.scss */
+ul.ui-autocomplete {
+  position: absolute;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: solid 1px #999;
+  cursor: default;
+}
+/* line 44, /Users/Peter/Documents/github/Cmpe131/app/assets/stylesheets/static_pages.scss */
+ul.ui-autocomplete li {
+  background-color: #FFF;
+  border-top: solid 1px #DDD;
+  margin: 0;
+  padding: 0;
+}
+/* line 49, /Users/Peter/Documents/github/Cmpe131/app/assets/stylesheets/static_pages.scss */
+ul.ui-autocomplete li a {
+  color: #000;
+  display: block;
+  padding: 3px;
+}
+/* line 54, /Users/Peter/Documents/github/Cmpe131/app/assets/stylesheets/static_pages.scss */
+ul.ui-autocomplete li:hover, ul.ui-autocomplete li:active {
+  background-color: #FFFCB2;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+
+ */
+
+
+.page-header{padding-bottom:9px;margin:40px 0 20px;border-bottom:1px solid #eee}
+
+ a:hover{
+  color: #FF0800;
+  background-color: white;
+}
+
+main{
+  padding: 10px 20px 20px 20px;
+}
+ header{
+  display: block;
+  padding: 20px 10px 50px 10px;
+}
+ html, body{
+  margin:0;
+  padding:0;
+  height:100%;
+  background: #F2F2F2;
+}
+
+ div#container{
+  box-sizing: border-box;
+  padding: 0px 0px 150px 0px;
+  position: relative;
+  min-height:100%;
+  background-color: #F2F2F2;
+}
+div#profBar{
+  width:100%;
+  height:20px;
+
+  display:block;
+  /* Padding Top, Right, Bottom, Left */
+  padding: 5px 20px 0px 10px;
+  background: #2F343D;
+}
+div#profBar1{
+  position:relative;
+  float:right;
+  width:300px;
+  right:5%;
+}
+div#profBar a{
+
+  margin: 0;
+  text-decoration: none;
+  padding-left: 10px;
+  color: black;
+  color: white;
+  font-size: 130%;
+  font-family: "Times New Roman";
+
+}
+ 
+div#profBar a:hover{
+  background-color:#2F343D;
+  color: white;
+
+}
+
+ div#headwrap{
+
+  left: 0;
+  width:100%;
+  height:110px;
+  background: white;
+}
+div#navBar{
+
+  width:100%;
+  height:30px;
+
+ display:block;
+  /* Padding Top, Right, Bottom, Left */
+  padding: 5px 20px 5px 10px;
+  background:#01B1AF;
+}
+div#navBar a{
+  margin: 0;
+  text-decoration: none;
+  padding-left: 10px;
+  color: black;
+  font-size: 180%;
+  font-family: "Times New Roman";
+
+}
+ 
+div#navBar a:hover{
+  background-color:#01B1AF;
+  color: white;
+
+}
+
+ div#bodywrap{
+  position:relative;
+  width: 900px;
+  min-height: 100%;
+  margin: 0 auto ; 
+  /*border: 2px solid #01B1AF;*/
+}
+
+ div#footwrap{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height:175px;
+  background: white;
+}
+
+/*WEBSITE TITLE*/
+ .websiteTitle{
+  position: absolute;
+  left: 220px;
+  top:45px;
+  margin-left: -250px;
+  font-size: 28px;
+  text-decoration: none;
+  display: inline;
+  line-height: 90px;
+  padding-left: 60px;
+  
+}
+.websiteTitle:hover{
+  background-color: white;
+  color: black;
+}
+ div#tabs{
+  float:left;
+  padding-top: 5px;
+ }
+/*SEARCHING BAR*/
+ div#searchBar{
+  position:relative;
+width:430px;
+float:right;
+right:5%;
+}
+
+#search-input{
+  width: 353px;
+
+  height:20px;
+}
+
+ 
+#search-button{
+
+  background-color: #00647D;
+  padding: 7px 12px;
+  font: 13px sans-serif;
+  text-decoration: none;
+  border: 1px solid #000;
+  border-color: #aaa #444 #444 #aaa;
+  color: #FFF;
+}
+
+/*FOOT OF THE LAYOUT*/
+#leftfoot{
+  position:absolute;
+  right:71%;
+  margin-right:-250px;
+width:500px;
+}
+
+#leftfoot1{
+  font-size: 28px;
+  color: #606060;
+  text-decoration: none;
+  display: inline;
+  line-height: 90px;
+  padding-left: 60px;
+}
+#leftfoot2{
+  position: relative;
+  top:-50px;
+  left:30px;
+  color:#A8A8AA
+}
+#midfoot{
+  position:absolute;
+  left:75%;
+  margin-left:-130px;
+  width: 260px;
+  /*margin-right: 20px;*/
+}
+#midfoot1{
+  color:#A8A8AA;
+}
+
+@media all and (max-width: 950px) {
+
+div#profBar1 {
+  position:absolute;
+  left: 600px;
+
+}
+
+div#searchBar{
+position:absolute;
+left:460px;
+}
+#leftfoot{
+  position:absolute;
+  left:20px;
+  margin-right:-250px;
+width:500px;
+}
+#midfoot{
+  position:absolute;
+  left:700px;
+  margin-left:-130px;
+  width: 260px;
+  /*margin-right: 20px;*/
+}
+}
+
+div#adHeader{
+  background:white;
+
+  padding :0px 20px 5px 20px;
+}
+div #adHeader a{
+
+  color: blue;
+  font-size: 150%;
+  font-family: "Times New Roman";
+}
+div#adTitle{
+  padding: 10px 15px 0px 15px;
+  color: blue;
+  font-size: 300%;
+  font-family: "Times New Roman";
+
+}
+div#adBody{
+  border: 2px solid #2B5EAF;
+  background: #F2F2F2;
+  padding: 10px 10px 10px 10px;
+  min-height: 25px;
+  font-size: 150%;
+  font-family: "Times New Roman";
+}
+div#comments{
+background: white;
+padding: 5px 15px 5px 10px;
+}
+#actions{
+  padding: 0px 10px 0px 10px;
+  font-size: 180%;
+  font-family: "Times New Roman";
+}
+
+
+
+
+
+
+
