@@ -1,0 +1,72 @@
+<div id="/">
+<!--Styling HTML -->
+<style>
+
+td{font-size: 14px;line-height: 30px;}
+form{font-size: 14px;line-height: 30px;}
+h1{font-size: 28px;}
+h2{font-size: 28px;}
+h3{font-size: 28px;}
+.about-text{font-size: 14px; line-height: 30px}
+</style>
+
+<body>
+	<h1>About SJSU Textbook Exchange</h1>
+	<p class="about-text">
+	We all know that buying new textbooks every semester is very tiring and expensive. Through SJSU Textbook Exchange, you can buy, rent, and sell to other SJSU students. 
+	</p>
+
+	<p class="about-text"> 
+	SJSU Textbook Exchange is easy, reliable—and cheaper. Who better to trust than students like yourself?
+	</p>
+
+	<h2>RailsCoders Team</h2>	
+	<table style="width:100%">
+		<tr>
+		    <td><%=link_to image_tag("kim_pham.jpg", alt: "kim's photo",size:"150x150",style: "border-radius: 100px"),{:class => 'circular_image'}%></td> 
+		    <td><%=link_to image_tag("nicole.jpg", alt: "nicole's photo",size:"150x150", style: "border-radius: 100px"),{:class=>'circular_image'}%></td>
+		    <td><%=link_to image_tag("phat.jpg", alt: "phat's photo",size:"150x150",style: "border-radius: 100px"),{:class=>'circular_image'}%></td>
+		    <td><%=link_to image_tag("quoc.jpg", alt: "quoc's photo",size:"150x150",style: "border-radius: 100px"),{:class=>'circular_image'}%></td>
+ 	 	</tr>	
+
+ 	 	<tr>
+		 	<td>Kim Pham</td>
+		    <td>Nicole Deleon</td> 
+		    <td>Phat Nguyen</td>
+		    <td>Quoc Nguyen</td>
+	    </tr>
+
+	    <tr>
+		 	<td>Software Engineering</td>
+		    <td>Industrial Engineering</td> 
+		    <td>Computer Engineering</td>
+		    <td>Software Engineering</td>
+	    </tr>
+
+
+	</table>
+
+	<!--<h3>Contact Us</h3>-->
+	<br>
+	<td><%=link_to image_tag("tower_hall.jpg", alt: "tower hall",size:"900x300"),"/",{:class=>'pic'}%></td> 
+	<!-- <form action="action_page.php"> -> supposed go to database-->
+	<!--<!<form action="mailto:RailsCoders123456@gmail.com">
+  		Your name:<br>
+  		<input type="text" name="name" style="font-size:16pt;"><br>
+  		Your email:<br>
+  		<input type="text" name="email" style="font-size:16pt;"><br>
+ 		 Subject:<br>
+ 		 <input type="text" name="subject" style="font-size:16pt;"><br>
+ 		 Comment:<br>
+ 		 <textarea name="comment" style="width: 300px; height: 150px; font-size:16pt;"></textarea><br>
+  		<input type="submit" value="Submit">-->
+  		<!-- ruby code should go here-->
+  		<!-- ruby code should implement the comment data into database-->
+ 	 	<!--<input type="reset" value="Reset">
+	</form> -->
+	
+</body>
+</div>
+<!-- debug -->
+<p>
+</p>

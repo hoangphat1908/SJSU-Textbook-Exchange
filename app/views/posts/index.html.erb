@@ -1,0 +1,57 @@
+<!-- styling -->
+<style>
+h5{font-size: 14px;}
+/*.about-text{font-size: 14px; line-height: 30px}*/
+.page-header{padding-bottom:9px;margin:40px 0 20px;border-bottom:1px solid #eee}
+
+.table{width:100%;max-width:160%;margin-bottom:0px}
+.table-striped>tbody>tr:nth-of-type(odd){background-color:#b2dfdb;}
+</style>
+
+
+<div class="page-header">
+  <h1>Ads</h1>
+</div>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Body</th>
+      <th>User</th>
+    </tr>
+  </thead>
+
+<!-- pagination -->
+<div align = "center" >
+  <%= will_paginate @posts%>
+</div>
+<!-- done pagination-->
+
+  <tbody>
+    <% @posts.each do |post| %>
+      <tr>
+        <td><%= link_to post.title, post_path(post) %></td>
+        <td><%= post.body %></td>
+        <td>Posted <%= time_ago_in_words(post.created_at) %> ago by <%= link_to post.user.first, post.user %></td>
+        <!--
+        <td><%= link_to 'Edit', edit_post_path(post) %></td>
+        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        -->
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Post', new_post_path %>
+
+<!-- pagination -->
+<div align = "center" >
+  <%= will_paginate @posts%>
+</div>
+<!-- done pagination-->
+
+<p>
+</p>

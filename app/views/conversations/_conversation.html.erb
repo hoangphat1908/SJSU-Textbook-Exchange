@@ -1,0 +1,13 @@
+<b>From:</b> <%= conversation.originator.first %><br>
+<b>Subject:</b> <%= conversation.subject %> (conversation partial)<br>
+(<%= conversation.messages.last.created_at.strftime("%I:%M %p %b %d") %>)
+
+<%= link_to "View", conversation_path(conversation) %>
+
+<% if conversation.is_trashed?(current_user) %>
+	<%= link_to 'Untrash', untrash_conversation_path(conversation), method: :post %>
+	<%= link_to 'Clear Trash', clear_conversation_path(conversation), method: :post%>
+<% else %>
+	<%= link_to 'Trash', trash_conversation_path(conversation), method: :post %>
+<%end%>
+<br><br>
