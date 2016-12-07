@@ -1,0 +1,14 @@
+<!--Reference: Mailboxer and private messaging tutorial
+From: http://josephndungu.com/tutorials/private-inbox-system-in-rails-with-mailboxer-->
+<ul class="nav nav-pills nav-stacked">
+  <li class="<%= active_page(:inbox) %>">
+    <%= link_to 'Inbox', mailbox_inbox_path   %>
+  </li>
+  <li class="<%= active_page(:sent) %>">
+    <%= link_to 'Sent', mailbox_sent_path  %>
+  </li>
+
+  <li class="<%= active_page(:trash) %>">
+    <%= link_to 'Trash', mailbox_trash_path  %>
+  </li>
+</ul>

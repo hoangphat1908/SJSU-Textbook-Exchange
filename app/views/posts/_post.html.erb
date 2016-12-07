@@ -1,0 +1,10 @@
+
+<li id="post-<%= post.id %>">
+  <strong><span class="user"><%= link_to 'Show', post %></span></strong>
+
+  <strong><span class="content"><%= post.title %></span></strong>
+  <span class="content"><%= post.body %></span>
+  <span class="timestamp">
+    (Posted <%= time_ago_in_words(post.created_at) %> ago.)
+  </span>
+</li>
