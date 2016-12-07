@@ -8,30 +8,24 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
   </head>
-
+ 
   <body>
     <div id="container">
-
-
           <div id="profBar">
           <div id="profBar1">
             <% if logged_in? %>
                <strong style="color:white">Welcome, <%= current_user.first %></strong>
                <%= link_to "Profile", current_user %>
-               
                <!--link to mailbox for messaging-->
                <%= link_to "Inbox", mailbox_inbox_path %>
                <%= link_to "Log out", logout_path, method:"delete" %>
                <!-- (Log in as <%= current_user.first %>) -->
             <% else %>
-
                <%= link_to "Log in", login_path %>
                <%= link_to "Register", signup_path %>
             <% end %>
           </div>
           </div>
-
-
       <div id="headwrap">
         <header>
           <%= link_to 'SJSU Textbook Exchange®', "/",
@@ -47,12 +41,19 @@
             <%= link_to "Help", help_path %>
             <!-- link_to 'About', {:controller => 'static_pages', :action =>'about'} -->
 </div>
+  
+ 
           <div id="searchBar">
-           <%= form_tag books_path, :method =>'get' do %>
-              <%=text_field_tag :search, params[:search], id: "search-input", placeholder: "search book", data: {autocomplete: autocomplete_book_title_books_path}%>
-              <%= submit_tag "Search", {:id => 'search-button'} %>
-            <%end%>
-          
+            <table>
+             <%= form_tag books_path, :method =>'get' do %> 
+              <tr>
+                <th><%= submit_tag "Search", {:id => 'search-button'} %></th>
+           
+                 <th><%=text_field_tag :search, params[:search], id: "search-input", placeholder: "search book", data: {autocomplete: autocomplete_book_title_books_path}%>  </th>
+         
+              <%end%>
+               </tr>
+            </table>
 
 
           </div>
