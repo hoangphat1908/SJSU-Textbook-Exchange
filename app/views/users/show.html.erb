@@ -1,0 +1,33 @@
+<h1> Profile </h1>
+
+
+<%# someone make this thing display horizontally %>
+<ul id="menu">
+  <li><strong>First:</strong>
+  <%= @user.first %></li>
+
+  <li><strong>Last:</strong>
+  <%= @user.last %></li>
+
+  <li><strong>Email:</strong>
+  <%= @user.email %></li>
+</ul>
+<% if @user==current_user %>
+<%= link_to 'Edit Your Account', edit_user_path(@user) %> 
+<%= link_to 'Destroy', @user, method: :delete, data: { confirm: 'Are you sure?' } %>
+<% end %>
+<% id = @user.id %>
+<% if @user!=current_user %>
+	 <%= link_to 'Send Message', new_conversation_path(:id => id) %>
+<% end %>
+| <%= link_to 'Back to Home', '/' %>
+
+
+<div>
+	<% if @user.posts.any? %>
+	  <h1> Posts (<%= @user.posts.count %>)</h1>
+	  <ol class="posts" >
+	    	<%= render @user.posts %>
+	  </ol>
+	<% end %>
+</div>

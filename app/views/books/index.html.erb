@@ -1,0 +1,66 @@
+<!-- styling -->
+<style>
+h5{font-size: 14px;}
+/*.about-text{font-size: 14px; line-height: 30px}*/
+.page-header{padding-bottom:9px;margin:40px 0 20px;border-bottom:1px solid #eee}
+
+.table{width:100%;max-width:160%;margin-bottom:0px}
+.table-striped>tbody>tr:nth-of-type(odd){background-color:#f9f9f9;}
+</style>
+
+
+<%- model_class = Book -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+
+<% if @books.blank? %>
+    <h4> The book you requested was not found in our database. </h4>
+<%else%>
+<h5> Click on the View this ad under View column to view the advertisement of this book. </h5>
+
+<!-- pagination -->
+<div align = "center" >
+  <% @books = @books.paginate(:page => params[:page], :per_page => 5) %>
+  <%= will_paginate @books%>
+</div>
+<!-- done pagination-->
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:title) %></th>
+      <th><%= model_class.human_attribute_name(:edition) %></th>
+      <th><%= model_class.human_attribute_name(:picture) %></th>
+      <th><%= model_class.human_attribute_name(:author) %></th>
+      <th><%= model_class.human_attribute_name(:isbn) %></th>
+      <th><%= model_class.human_attribute_name(:subject) %></th>
+      <th><%= model_class.human_attribute_name(:view) %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @books.each do |book| %>
+      <tr>
+        <td><%= link_to book.title, post_book_path(book.post_id,book) %></td>
+        <td><%= book.edition %></td>
+        <td><%= image_tag book.picture.url, size: "116x150" %></td>
+        <td><%= book.author %></td>
+        <td><%= book.isbn %></td>
+        <td><%= book.subject %></td>
+        <td><%= link_to 'View this ad', post_path(book.post_id) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<!-- pagination -->
+<div align = "center" >
+  <%= will_paginate @books%>
+</div>
+<!-- done pagination-->
+
+<% end %>
+<!-- debug -->
+<p>
+</p>
+

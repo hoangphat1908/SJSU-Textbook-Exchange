@@ -1,0 +1,56 @@
+<!-- styling -->
+<style>
+h5{font-size: 14px;}
+/*.about-text{font-size: 14px; line-height: 30px}*/
+.page-header{padding-bottom:9px;margin:40px 0 20px;border-bottom:1px solid #eee}
+
+.table{width:100%;max-width:160%;margin-bottom:0px}
+.table-striped>tbody>tr:nth-of-type(odd){background-color:#f9f9f9;}
+</style>
+<%- model_class = Book -%>
+<h1>Editing Post</h1>
+
+<!-- render 'form' -->
+<%= form_for(@post) do |f| %>
+  <% if @post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+      <% @post.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= f.label :body %>
+    <%= f.text_area :body %>
+  </div>
+
+<!-- done render 'form' -->
+
+<p><strong> A list of books on my ad:</strong></p>
+
+<div id="books_part">
+	<!--passing books  -->
+ <%= render 'books_index' %>
+</div>
+<!-- button -->
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<!-- done with button -->
+<% end %>
+<!-- done with rendering form -->
+<%= link_to 'Show', @post %> |
+<%= link_to 'Back', posts_path %>
+<!-- debug -->
+<p>
+</p>

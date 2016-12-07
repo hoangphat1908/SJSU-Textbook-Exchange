@@ -1,0 +1,22 @@
+<!--Reference: Mailboxer and private messaging tutorial
+From: http://josephndungu.com/tutorials/private-inbox-system-in-rails-with-mailboxer-->
+
+<!--Get mailbox folfers: inbox, sent, trash-->
+<%= render 'mailbox/folders' %>
+
+<!--Get messages from a conversation-->
+<%= render partial: 'messages' %>
+
+<!--Reply form-->
+<%= form_for :message, url: reply_conversation_path(conversation) do |f| %>
+    <div class="form-group">
+      <%= f.text_area :body, placeholder: "Write a reply...", rows: 4, class: "form-control" %>
+    </div>
+    <%= f.submit "Reply", class: 'btn btn-danger pull-right' %>
+<% end %>
+<!-- debug -->
+<p>
+</p>
+      
+
+
