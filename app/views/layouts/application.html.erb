@@ -11,26 +11,23 @@
 
   <body>
     <div id="container">
-
-
-          <div id="profBar">
-          <div id="profBar1">
-            <% if logged_in? %>
-               <strong style="color:white">Welcome, <%= current_user.first %></strong>
-               <%= link_to "Profile", current_user %>
-               
-               <!--link to mailbox for messaging-->
-               <%= link_to "Inbox", mailbox_inbox_path %>
-               <%= link_to "Log out", logout_path, method:"delete" %>
+      <div id="topBar">
+        <% if logged_in? %>  
+          <strong style="color:white">Welcome, <%= current_user.first %></strong> 
+            <div id="logBar">
+              <%= link_to "Profile", current_user %>
+              <!--link to mailbox for messaging-->
+              <%= link_to "Inbox", mailbox_inbox_path %>
+              <%= link_to "Log out", logout_path, method:"delete" %>
+            </div>
                <!-- (Log in as <%= current_user.first %>) -->
-            <% else %>
-
-               <%= link_to "Log in", login_path %>
-               <%= link_to "Register", signup_path %>
-            <% end %>
+        <% else %>
+          <div id="logBar">
+            <%= link_to "Log in", login_path %>
+            <%= link_to "Register", signup_path %>
           </div>
-          </div>
-
+        <% end %>
+      </div><!--END OF TOPBAR-->
 
       <div id="headwrap">
         <header>
@@ -39,26 +36,26 @@
 
       </div><!--END OF HEADWRAP-->
 
-<div id="navBar">
-<div id="tabs">
-            <%= link_to 'Home', "/"%>
-            <%= link_to "Ads", posts_path %>
-            <%= link_to "Books", books_path %>
-            <%= link_to "Help", help_path %>
-            <!-- link_to 'About', {:controller => 'static_pages', :action =>'about'} -->
-</div>
-          <div id="searchBar">
-           <%= form_tag books_path, :method =>'get' do %>
-              <%=text_field_tag :search, params[:search], id: "search-input", placeholder: "search book", data: {autocomplete: autocomplete_book_title_books_path}%>
-              <%= submit_tag "Search", {:id => 'search-button'} %>
-            <%end%>
-          
-
-
-          </div>
-</div>
-
-
+      <div id="navBar">
+        <div id="tabs">
+          <%= link_to 'Home', "/"%>
+          <%= link_to "Ads", posts_path %>
+          <%= link_to "Books", books_path %>
+          <%= link_to "Help", help_path %>
+          <!-- link_to 'About', {:controller => 'static_pages', :action =>'about'} -->
+        </div>
+        <div id="searchBar">
+          <table>
+            <%= form_tag books_path, :method =>'get' do %> 
+              <tr>
+                <th><%=text_field_tag :search, params[:search], id: "search-input", placeholder: "search book", data: {autocomplete: autocomplete_book_title_books_path}%>  </th>
+                <th><%= submit_tag "Search", {:id => 'search-button'} %></th>
+              </tr>
+            <%end%> 
+          </table>
+        </div>
+      </div><!--END OF NAVBAR-->
+      
       <div id="bodywrap">
         <p id="notice"></br></br></p>
         <p id="notice"><%= notice %>
